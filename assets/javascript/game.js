@@ -50,17 +50,17 @@ document.onkeyup = function() {
 
 //Another function for avoiding constant restarting of game
 function  checkStatus() {
-    if ((wins === +1) || (losses === +1)) {
+    if ((wins === +1) || (losses > 0)) {
         psychicGame();
     } 
 }
 
 
 /* Pseudo-Code
-1. User presses a key and a letter is randomly chosen from an array
-2. If key pressed is correct, user wins 1 round, new letter is randomly chosen
-3. User has 9 guesses at the beginning of round t0 guess the letter {
-4. If key pressed is incorrect, letter is displayed in text area {
-5. else if guesses remaining = 0, user loses the round.
+/1. User presses a key and a letter is randomly chosen from an array
+/2. If key pressed is correct, user wins 1 round, new letter is randomly chosen
+/3. User has 9 guesses at the beginning of round to guess the letter {
+/4. If key pressed is incorrect, letter is displayed in text area {
+/5. else if guesses remaining = 0, user loses the round.
 6. Make game continue until correct letter is guessed.
 */
