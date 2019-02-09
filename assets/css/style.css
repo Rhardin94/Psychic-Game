@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    background-color: purple;
+    color: white;
+}
+body {
+    background-color: magenta;
+}

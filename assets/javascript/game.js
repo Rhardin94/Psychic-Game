@@ -1,7 +1,7 @@
 //Variables for win, loss, and guesses
 var wins = 0;
 var losses = 0;
-var guessesRemaining = 9;
+var guessesRemaining = 10;
 //Array for computer's pick
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Variables that correspond to HTML
@@ -29,6 +29,7 @@ document.onkeyup = function() {
             losses++;
         } else if (userGuess !== computerGuess) {
             guessesRemaining--;
+            instructionsText.textContent = 'Wrong, guess again!'
         } else {
           instructionsText.textContent = "That's not a letter.."
         }
