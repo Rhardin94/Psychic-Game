@@ -2,6 +2,8 @@
 let wins = 0;
 let losses = 0;
 let guessesRemaining = 10;
+let guessesArray = [];
+let compGuess = [];
 //Array for computer's pick
 let computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Variables that correspond to HTML
@@ -10,8 +12,7 @@ let lossesText = document.getElementById("losses-text");
 let remainingText = document.getElementById("guesses-remaining");
 let guessesText = document.getElementById("guesses-text");
 let instructionsText = document.getElementById("instructions-text");
-let guessesArray = [];
-let compGuess = [];
+
 
 //Initial function for computer to choose a random letter
 window.onload = function() {
@@ -36,7 +37,7 @@ document.onkeyup = function(event) {
             compGuess.push(computerGuess[0]);
             console.log(compGuess[0]);
         } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0)) {
-            guessesRemaining = guessesRemaining-1;
+            guessesRemaining--;
             instructionsText.textContent = "Wrong, guess again!";
         } else {
             losses++;

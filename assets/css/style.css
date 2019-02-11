@@ -1,10 +1,19 @@
 .container {
+    position: relative;
+    top: 100px;
     text-align: center;
-    width: 800px;
+    width: 700px;
     margin: auto;
-    background-color: purple;
-    color: white;
+    padding: 15px;
+    color: gold;
+    background-image: url("../images/psychic.jpg");
+    background-position: center;
+    background-repeat: inherit;
+}
+.container h3 {
+    position: relative;
+    top: 10px;
 }
 body {
-    background-color: magenta;
+    background-image: url("../images/background.jpg");
 }
