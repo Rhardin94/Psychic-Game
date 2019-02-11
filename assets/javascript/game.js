@@ -13,21 +13,17 @@ let remainingText = document.getElementById("guesses-remaining");
 let guessesText = document.getElementById("guesses-text");
 let instructionsText = document.getElementById("instructions-text");
 
-
 //Initial function for computer to choose a random letter
 window.onload = function() {
-let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-compGuess.push(computerGuess);
+    let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    compGuess.push(computerGuess);
     console.log(computerGuess[0]);
 }
-
-
 //Main Game function, captures key up and affects each html component based on computerGuess
 document.onkeyup = function(event) {
     const userGuess = event.key;
     guessesArray.push(userGuess);
     console.log(compGuess[0]);
-
         if ((userGuess === compGuess[0]) && (guessesRemaining > 0)) {
             wins++;
             guessesRemaining = 9;
@@ -36,10 +32,11 @@ document.onkeyup = function(event) {
             let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             compGuess.push(computerGuess[0]);
             console.log(compGuess[0]);
+            instructionsText.textContent = "Good Job! Guess again!"
             //.includes example to ignore keyup that is not a string found here "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
         } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0) && (computerChoices.includes(userGuess))) {
             guessesRemaining--;
-            instructionsText.textContent = "Wrong, guess again!";
+            instructionsText.textContent = "Nope! Try another letter!";
         } else {
             losses++;
             guessesRemaining = 9;
@@ -48,24 +45,14 @@ document.onkeyup = function(event) {
             let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             compGuess.push(computerGuess[0]);
             console.log(compGuess[0]);
-        }
-        
-        
-    //Change the directions to "what letter am I thinking of"
-    instructionsText.textContent = "Guess what letter I'm thinking of!";
+            instructionsText.textContent = "You lose, try again!"
+        }        
     //Showing the text of wins, losses, remaining, etc with the value of each on the page
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
     remainingText.textContent = "Guesses remaining: " + guessesRemaining;
     guessesText.textContent = "Letters Guessed:" + guessesArray;
-
 }
-
-
-
-
-
-
 /* Pseudo-Code
 /1. User presses a key and a letter is randomly chosen from an array
 /2. If key pressed is correct, user wins 1 round, new letter is randomly chosen
