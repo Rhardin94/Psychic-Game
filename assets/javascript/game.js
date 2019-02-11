@@ -36,7 +36,8 @@ document.onkeyup = function(event) {
             let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             compGuess.push(computerGuess[0]);
             console.log(compGuess[0]);
-        } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0)) {
+            //.includes example to ignore keyup that is not a string found here "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+        } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0) && (computerChoices.includes(userGuess))) {
             guessesRemaining--;
             instructionsText.textContent = "Wrong, guess again!";
         } else {
@@ -72,4 +73,5 @@ document.onkeyup = function(event) {
 /4. If key pressed is incorrect, letter is displayed in text area {
 /5. else if guesses remaining = 0, user loses the round.
 /6. Make letter choice and game continue until correct letter is guessed.
+7. Change instructionsText if wrong letter guessed or keyup is not a string in computerChoices
 */
