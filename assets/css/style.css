@@ -13,6 +13,10 @@
 .container h3 {
     position: relative;
     top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 body {
     background-image: url("../images/background.jpg");

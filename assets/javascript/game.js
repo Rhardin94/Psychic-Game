@@ -24,6 +24,7 @@ document.onkeyup = function(event) {
     const userGuess = event.key;
     guessesArray.push(userGuess);
     console.log(compGuess[0]);
+    //win condtions
         if ((userGuess === compGuess[0]) && (guessesRemaining > 0)) {
             wins++;
             guessesRemaining = 9;
@@ -34,9 +35,11 @@ document.onkeyup = function(event) {
             console.log(compGuess[0]);
             instructionsText.textContent = "Good Job! Guess again!"
             //.includes example to ignore keyup that is not a string found here "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+        //Wrong guess conditons
         } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0) && (computerChoices.includes(userGuess))) {
             guessesRemaining--;
             instructionsText.textContent = "Nope! Try another letter!";
+        //Loss conditions
         } else {
             losses++;
             guessesRemaining = 9;
