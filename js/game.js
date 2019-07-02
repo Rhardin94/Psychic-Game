@@ -34,7 +34,7 @@ document.onkeyup = function(event) {
             compGuess.push(computerGuess[0]);
             console.log(compGuess[0]);
             instructionsText.textContent = "Good Job! Guess again!"
-            //.includes example to ignore keyup that is not a string found here "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+        //.includes example to ignore keyup that is not a string found here "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
         //Wrong guess conditons
         } else if ((userGuess !== compGuess[0]) && (guessesRemaining > 0) && (computerChoices.includes(userGuess))) {
             guessesRemaining--;

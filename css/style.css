@@ -6,7 +6,7 @@
     margin: auto;
     padding: 15px;
     color: gold;
-    background-image: url("../images/galaxy.jpg");
+    background-image: url("../assets/images/galaxy.jpg");
     background-position: center;
     background-repeat: inherit;
 }
@@ -19,7 +19,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../assets/images/background.jpg");
 }
 @media screen and (max-width: 980px) {
     .container {
